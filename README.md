@@ -67,6 +67,34 @@ $json = AI_Client::prompt( 'Analyze this topic: WordPress plugin development' )
 $data = json_decode( $json, true );
 ```
 
+### Vision (Image Input)
+
+Grok vision models can analyze images. You can pass an image URL, base64 string, or data URI using `with_file()`:
+
+```php
+// Using an image URL
+$text = AI_Client::prompt( 'Describe what you see in this image.' )
+    ->using_provider( 'grok' )
+    ->with_file( 'https://example.com/photo.jpg', 'image/jpeg' )
+    ->generate_text();
+
+// Using a base64-encoded image
+$base64 = base64_encode( file_get_contents( '/path/to/image.png' ) );
+$text = AI_Client::prompt( 'What objects are in this image?' )
+    ->using_provider( 'grok' )
+    ->with_file( $base64, 'image/png' )
+    ->generate_text();
+
+// Using a WordPress attachment
+$image_url = wp_get_attachment_url( $attachment_id );
+$text = AI_Client::prompt( 'Generate alt text for this image.' )
+    ->using_provider( 'grok' )
+    ->with_file( $image_url, 'image/jpeg' )
+    ->generate_text();
+```
+
+> **Note:** Vision support requires a Grok model with vision capabilities (e.g. models containing "vision" in their ID). The plugin automatically detects and flags these models.
+
 ### Multiple Candidates
 
 ```php

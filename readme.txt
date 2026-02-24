@@ -55,6 +55,12 @@ The provider automatically registers itself on the `init` hook. Once both plugin
 
 `$text = AI_Client::prompt( 'Summarize the history of WordPress.' )->using_provider( 'grok' )->using_system_instruction( 'Be concise and accurate.' )->using_temperature( 0.2 )->using_max_tokens( 500 )->generate_text();`
 
+= Vision (Image Input) =
+
+`$text = AI_Client::prompt( 'Describe this image.' )->using_provider( 'grok' )->with_file( 'https://example.com/photo.jpg', 'image/jpeg' )->generate_text();`
+
+Requires a Grok model with vision capabilities.
+
 = JSON Output =
 
 `$json = AI_Client::prompt( 'Analyze this topic: WordPress plugins' )->using_provider( 'grok' )->as_json_response( $schema )->generate_text();`
