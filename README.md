@@ -1,11 +1,11 @@
 # AI Provider for Grok
 
-An AI Provider for [Grok](https://x.ai/) (by xAI) for the [WP AI Client](https://github.com/WordPress/php-ai-client) SDK. Works as both a Composer package and a WordPress plugin.
+An AI Provider for [Grok](https://x.ai/) (by xAI) for the [WP AI Client](https://github.com/WordPress/wp-ai-client) SDK. Works as both a Composer package and a WordPress plugin.
 
 ## Requirements
 
 - PHP 7.4 or higher
-- [wordpress/php-ai-client](https://github.com/WordPress/php-ai-client) must be installed
+- [wordpress/wp-ai-client](https://github.com/WordPress/wp-ai-client) must be installed
 - Purchased API tokens from [x.ai](https://x.ai/) — a valid token balance is required for API requests to work
 
 ## Installation
