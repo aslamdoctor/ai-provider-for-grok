@@ -1,0 +1,49 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Claude Code
+.claude
+
+# CI/CD
+.github
+
+# Development
+.distignore
+.editorconfig
+.eslintrc
+.prettierrc
+.phpcs.xml
+.phpcs.xml.dist
+phpcs.xml
+phpcs.xml.dist
+phpstan.neon
+phpstan.neon.dist
+phpunit.xml
+phpunit.xml.dist
+composer.json
+composer.lock
+package.json
+package-lock.json
+Makefile
+
+# IDE / Editor
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / Test
+node_modules
+dist
+tests
+bin
+scripts
+
+# Logs
+*.log
