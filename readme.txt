@@ -37,11 +37,11 @@ Available models are dynamically discovered from the Grok API.
 2. Ensure the WP AI Client plugin is installed and activated
 3. Upload the plugin files to `/wp-content/plugins/wp-ai-provider-for-grok/`
 4. Activate the plugin through the 'Plugins' menu in WordPress
-5. Go to Settings > AI Credentials and enter your Grok API key
+5. Go to Settings > AI Credentials and enter your Grok (xAI) API key
 
 == Screenshots ==
 
-1. AI Client Credentials settings page where you enter your Grok API key.
+1. AI Client Credentials settings page where you enter your Grok (xAI) API key.
 
 == Usage ==
 

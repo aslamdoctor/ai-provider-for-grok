@@ -17,7 +17,7 @@ An AI Provider for [Grok](https://x.ai/) (by xAI) for the [WP AI Client](https:/
 3. Upload to `/wp-content/plugins/wp-ai-provider-for-grok/`
 4. Ensure the WP AI Client plugin is installed and activated
 5. Activate the plugin through the WordPress admin
-6. Go to **Settings > AI Credentials** and enter your Grok API key
+6. Go to **Settings > AI Credentials** and enter your Grok (xAI) API key
 
 ![AI Client Credentials settings page](assets/screenshot-ai-credentials.png)
 

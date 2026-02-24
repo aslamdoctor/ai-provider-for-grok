@@ -64,7 +64,7 @@ class GrokProvider extends AbstractApiProvider
     {
         return new ProviderMetadata(
             'grok',
-            'Grok',
+            'Grok (xAI)',
             ProviderTypeEnum::cloud(),
             'https://console.x.ai/',
             RequestAuthenticationMethod::apiKey()
