@@ -13,9 +13,6 @@ Thumbs.db
 *.swo
 *~
 
-# Claude Code
-.claude/
-
 # Build
 dist/
 *.zip

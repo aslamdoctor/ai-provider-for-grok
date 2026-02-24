@@ -44,6 +44,8 @@ dist
 tests
 bin
 scripts
+build.sh
+README.md
 
 # Logs
 *.log
