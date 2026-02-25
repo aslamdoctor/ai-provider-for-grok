@@ -191,7 +191,7 @@ if ( $prompt->is_supported_for_text_generation() ) {
 
 ## Supported Models
 
-Available models are dynamically discovered from the Grok API. This includes text generation models and, for compatible models, vision input support. See the [xAI documentation](https://docs.x.ai/) for the full list of available models.
+Available models are dynamically discovered from the Grok API. This includes text generation models and, for compatible models, vision input support. See the [xAI documentation](https://docs.x.ai/developers/models) for the full list of available models.
 
 ## Configuration
 
