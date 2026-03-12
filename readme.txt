@@ -94,7 +94,7 @@ Data is only sent when the plugin is actively used to generate text or when chec
 = Service links =
 
 * xAI website: [https://x.ai](https://x.ai)
-* xAI API documentation: [https://docs.x.ai](https://docs.x.ai)
+* xAI API documentation: [https://docs.x.ai/developers/models](https://docs.x.ai/developers/models)
 * xAI Terms of Service: [https://x.ai/legal/terms-of-service](https://x.ai/legal/terms-of-service)
 * xAI Privacy Policy: [https://x.ai/legal/privacy-policy](https://x.ai/legal/privacy-policy)
 
