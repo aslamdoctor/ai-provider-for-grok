@@ -1,4 +1,4 @@
-=== AI Provider for Grok ===
+=== Aslam's AI Provider for Grok ===
 Contributors: aslamdoctor
 Donate link: https://github.com/sponsors/aslamdoctor
 Tags: ai, grok, xai, artificial-intelligence
@@ -9,7 +9,7 @@ Requires PHP: 7.4
 License: GPL-3.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-AI Provider for Grok (xAI) for the WP AI Client SDK.
+Aslam's AI Provider for Grok (xAI) for the WP AI Client SDK.
 
 == Description ==
 
@@ -35,7 +35,7 @@ Available models are dynamically discovered from the Grok API.
 
 1. Purchase API tokens from [x.ai](https://x.ai/) if you haven't already
 2. Ensure the WP AI Client plugin is installed and activated
-3. Upload the plugin files to `/wp-content/plugins/ai-provider-for-grok/`
+3. Upload the plugin files to `/wp-content/plugins/aslams-ai-provider-for-grok/`
 4. Activate the plugin through the 'Plugins' menu in WordPress
 5. Go to Settings > AI Credentials and enter your Grok (xAI) API key
 
@@ -76,6 +76,27 @@ Visit the [xAI Console](https://console.x.ai/) to create an account and generate
 = Does this plugin work without the WP AI Client? =
 
 No, this plugin requires the WP AI Client plugin to be installed and activated. It provides the Grok-specific implementation that the WP AI Client uses.
+
+== External services ==
+
+This plugin connects to the xAI Grok API to provide AI-powered text generation capabilities within WordPress. The xAI Grok API is a third-party service operated by xAI Corp.
+
+= What data is sent and when =
+
+* **API key**: Your xAI API key is sent with every request for authentication.
+* **Model listing**: When the plugin checks provider availability or lists available models, it sends a request to the xAI API to retrieve the current list of Grok models.
+* **Text generation prompts**: When your site uses the plugin to generate text, the prompt text (and any attached images or files, system instructions, and conversation history) is sent to the xAI API for processing.
+
+All communication is sent to: [https://api.x.ai/v1](https://api.x.ai/v1)
+
+Data is only sent when the plugin is actively used to generate text or when checking model availability. No data is sent passively or in the background.
+
+= Service links =
+
+* xAI website: [https://x.ai](https://x.ai)
+* xAI API documentation: [https://docs.x.ai](https://docs.x.ai)
+* xAI Terms of Service: [https://x.ai/legal/terms-of-service](https://x.ai/legal/terms-of-service)
+* xAI Privacy Policy: [https://x.ai/legal/privacy-policy](https://x.ai/legal/privacy-policy)
 
 == Changelog ==
 
