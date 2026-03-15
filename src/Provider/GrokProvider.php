@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Aslam\GrokAiProvider\Provider;
 
+use WordPress\AiClient\AiClient;
 use WordPress\AiClient\Common\Exception\RuntimeException;
 use WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiProvider;
 use WordPress\AiClient\Providers\ApiBasedImplementation\ListModelsApiBasedProviderAvailability;
@@ -51,7 +52,7 @@ class GrokProvider extends AbstractApiProvider
         }
 
         throw new RuntimeException(
-            'Unsupported model capabilities: ' . esc_html( implode( ', ', $capabilities ) )
+            'Unsupported model capabilities: ' . implode( ', ', $capabilities )
         );
     }
 
@@ -62,13 +63,27 @@ class GrokProvider extends AbstractApiProvider
      */
     protected static function createProviderMetadata(): ProviderMetadata
     {
-        return new ProviderMetadata(
+        $providerMetadataArgs = [
             'grok',
             'Grok (xAI)',
             ProviderTypeEnum::cloud(),
             'https://console.x.ai/',
-            RequestAuthenticationMethod::apiKey()
-        );
+            RequestAuthenticationMethod::apiKey(),
+        ];
+        // Provider description support was added in 1.2.0.
+        if (version_compare(AiClient::VERSION, '1.2.0', '>=')) {
+            if (function_exists('__')) {
+                $providerMetadataArgs[] = __('Text generation with Grok models by xAI.', 'aslams-provider-for-grok-ai');
+            } else {
+                $providerMetadataArgs[] = 'Text generation with Grok models by xAI.';
+            }
+
+            // Provider logo support was added in 1.3.0.
+            if (version_compare(AiClient::VERSION, '1.3.0', '>=')) {
+                $providerMetadataArgs[] = dirname(__DIR__, 2) . '/assets/logo.svg';
+            }
+        }
+        return new ProviderMetadata(...$providerMetadataArgs);
     }
 
     /**

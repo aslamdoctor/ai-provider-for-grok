@@ -65,6 +65,7 @@ class GrokModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDi
             new SupportedOption(OptionEnum::presencePenalty()),
             new SupportedOption(OptionEnum::frequencyPenalty()),
             new SupportedOption(OptionEnum::outputMimeType(), ['text/plain', 'application/json']),
+            new SupportedOption(OptionEnum::outputSchema()),
             new SupportedOption(OptionEnum::functionDeclarations()),
             new SupportedOption(OptionEnum::customOptions()),
         ];
