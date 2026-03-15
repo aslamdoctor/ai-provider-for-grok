@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: AI Provider for Grok
- * Plugin URI: https://github.com/aslamdoctor/ai-provider-for-grok
- * Description: AI Provider for Grok (xAI) for the WordPress AI Client.
+ * Plugin Name: Aslam's Provider for Grok AI
+ * Plugin URI: https://github.com/aslamdoctor/aslams-provider-for-grok-ai
+ * Description: Aslam's Provider for Grok AI (xAI) for the WordPress AI Client.
  * Requires at least: 6.9
  * Requires PHP: 7.4
  * Version: 1.0.0
@@ -11,17 +11,17 @@
  * Author URI: https://github.com/sponsors/aslamdoctor
  * License: GPL-3.0-or-later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: ai-provider-for-grok
+ * Text Domain: aslams-provider-for-grok-ai
  *
- * @package WordPress\GrokAiProvider
+ * @package Aslam\GrokAiProvider
  */
 
 declare(strict_types=1);
 
-namespace WordPress\GrokAiProvider;
+namespace Aslam\GrokAiProvider;
 
 use WordPress\AiClient\AiClient;
-use WordPress\GrokAiProvider\Provider\GrokProvider;
+use Aslam\GrokAiProvider\Provider\GrokProvider;
 
 if (!defined('ABSPATH')) {
     return;
@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
 require_once __DIR__ . '/src/autoload.php';
 
 /**
- * Registers the AI Provider for Grok with the AI Client.
+ * Registers the Grok AI provider with the AI Client.
  *
  * @since 1.0.0
  *

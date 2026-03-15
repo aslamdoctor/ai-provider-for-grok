@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WordPress\GrokAiProvider\Provider;
+namespace Aslam\GrokAiProvider\Provider;
 
 use WordPress\AiClient\Common\Exception\RuntimeException;
 use WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiProvider;
@@ -14,11 +14,11 @@ use WordPress\AiClient\Providers\Enums\ProviderTypeEnum;
 use WordPress\AiClient\Providers\Http\Enums\RequestAuthenticationMethod;
 use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
 use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WordPress\GrokAiProvider\Metadata\GrokModelMetadataDirectory;
-use WordPress\GrokAiProvider\Models\GrokTextGenerationModel;
+use Aslam\GrokAiProvider\Metadata\GrokModelMetadataDirectory;
+use Aslam\GrokAiProvider\Models\GrokTextGenerationModel;
 
 /**
- * Class for the AI Provider for Grok.
+ * Class for Aslam's Provider for Grok AI.
  *
  * @since 1.0.0
  */

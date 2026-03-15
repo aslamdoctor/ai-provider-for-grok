@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace WordPress\GrokAiProvider\Models;
+namespace Aslam\GrokAiProvider\Models;
 
 use WordPress\AiClient\Providers\Http\DTO\Request;
 use WordPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
 use WordPress\AiClient\Providers\OpenAiCompatibleImplementation\AbstractOpenAiCompatibleTextGenerationModel;
-use WordPress\GrokAiProvider\Provider\GrokProvider;
+use Aslam\GrokAiProvider\Provider\GrokProvider;
 
 /**
- * Class for text generation models used by the AI Provider for Grok.
+ * Class for text generation models used by Aslam's Provider for Grok AI.
  *
  * @since 1.0.0
  */

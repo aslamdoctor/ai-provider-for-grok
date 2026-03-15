@@ -1,17 +1,17 @@
 <?php
 
 /**
- * PSR-4 autoloader for the AI Provider for Grok package.
+ * PSR-4 autoloader for Aslam's Provider for Grok AI package.
  *
  * @since 1.0.0
  *
- * @package WordPress\GrokAiProvider
+ * @package Aslam\GrokAiProvider
  */
 
 declare(strict_types=1);
 
 spl_autoload_register(static function (string $class): void {
-    $prefix = 'WordPress\\GrokAiProvider\\';
+    $prefix = 'Aslam\\GrokAiProvider\\';
     $baseDir = __DIR__ . '/';
 
     $len = strlen($prefix);

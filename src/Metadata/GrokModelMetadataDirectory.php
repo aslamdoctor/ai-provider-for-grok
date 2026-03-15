@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WordPress\GrokAiProvider\Metadata;
+namespace Aslam\GrokAiProvider\Metadata;
 
 use WordPress\AiClient\Messages\Enums\ModalityEnum;
 use WordPress\AiClient\Providers\Http\DTO\Request;
@@ -14,7 +14,7 @@ use WordPress\AiClient\Providers\Models\DTO\SupportedOption;
 use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
 use WordPress\AiClient\Providers\Models\Enums\OptionEnum;
 use WordPress\AiClient\Providers\OpenAiCompatibleImplementation\AbstractOpenAiCompatibleModelMetadataDirectory;
-use WordPress\GrokAiProvider\Provider\GrokProvider;
+use Aslam\GrokAiProvider\Provider\GrokProvider;
 
 /**
  * Class for the Grok model metadata directory.
