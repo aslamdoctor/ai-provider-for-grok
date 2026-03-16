@@ -26,3 +26,6 @@ dist/
 
 # Composer
 composer.lock
+
+# AI related
+.claude/
