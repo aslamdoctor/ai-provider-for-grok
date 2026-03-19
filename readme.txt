@@ -1,7 +1,7 @@
 === Third-Party Provider for Grok ===
 Contributors: aslamdoctor
 Donate link: https://github.com/sponsors/aslamdoctor
-Tags: ai, grok, xai, artificial-intelligence
+Tags: ai, grok, xai, artificial-intelligence, connector
 Requires at least: 6.9
 Tested up to: 6.9
 Stable tag: 1.0.1
