@@ -80,7 +80,7 @@ class GrokProvider extends AbstractApiProvider
         // Provider description support was added in 1.2.0.
         if (defined(AiClient::class . '::VERSION') && version_compare(AiClient::VERSION, '1.2.0', '>=')) {
             if (function_exists('__')) {
-                $providerMetadataArgs[] = __('Text and image generation with Grok models by xAI.', 'ai-provider-for-grok');
+                $providerMetadataArgs[] = __('Text and image generation with Grok models by xAI.', 'aslams-provider-for-grok-ai');
             } else {
                 $providerMetadataArgs[] = 'Text and image generation with Grok models by xAI.';
             }

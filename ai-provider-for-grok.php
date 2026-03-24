@@ -11,7 +11,7 @@
  * Author URI: https://github.com/sponsors/aslamdoctor
  * License: GPL-3.0-or-later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: ai-provider-for-grok
+ * Text Domain: aslams-provider-for-grok-ai
  *
  * @package Aslam\GrokAiProvider
  */

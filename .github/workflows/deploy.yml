@@ -26,5 +26,5 @@ jobs:
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-        SLUG: aslams-ai-provider-for-grok # Replace with your plugin slug
+        SLUG: aslams-provider-for-grok-ai
         ASSETS_DIR: assets # Optional - defaults to .wordpress-org
