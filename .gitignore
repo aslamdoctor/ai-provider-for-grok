@@ -29,3 +29,4 @@ composer.lock
 
 # AI related
 .claude/
+docs/

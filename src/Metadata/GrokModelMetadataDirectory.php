@@ -72,6 +72,10 @@ class GrokModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDi
             new SupportedOption(OptionEnum::customOptions()),
         ];
 
+        if (is_callable([OptionEnum::class, 'webSearch'])) {
+            $baseOptions[] = new SupportedOption(OptionEnum::webSearch());
+        }
+
         $textOnlyOptions = array_merge($baseOptions, [
             new SupportedOption(OptionEnum::inputModalities(), [[ModalityEnum::text()]]),
             new SupportedOption(OptionEnum::outputModalities(), [[ModalityEnum::text()]]),
@@ -119,6 +123,11 @@ class GrokModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDi
                     static function (array $modelData) use ($textCapabilities, $textOnlyOptions, $visionOptions, $imageCapabilities, $imageOptions): ?ModelMetadata {
                         $modelId = $modelData['id'];
 
+                        // Skip video models for now as xAI does not provide an OpenAI-compatible video endpoint.
+                        if (str_contains($modelId, 'video')) {
+                            return null;
+                        }
+
                         // Image generation models (e.g. grok-2-image-1212, grok-imagine-image).
                         if (str_contains($modelId, 'image') || str_contains($modelId, 'imagine')) {
                             return new ModelMetadata(
@@ -129,8 +138,8 @@ class GrokModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDi
                             );
                         }
 
-                        // Vision models support image input.
-                        if (str_contains($modelId, 'vision')) {
+                        // Vision models support image input (models with 'vision' or Grok 3+ multimodal models).
+                        if (str_contains($modelId, 'vision') || preg_match('/^grok-[3-9]/', $modelId)) {
                             return new ModelMetadata(
                                 $modelId,
                                 $modelId,
@@ -192,15 +201,18 @@ class GrokModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDi
             return 1;
         }
 
-        // Prefer higher version numbers (e.g. grok-3 > grok-2).
-        $aMatch = preg_match('/^grok-(\d+)/', $aId, $aMatches);
-        $bMatch = preg_match('/^grok-(\d+)/', $bId, $bMatches);
+        // Prefer higher version numbers (e.g. grok-4.20 > grok-4.7 > grok-4.3 > grok-2).
+        $aMatch = preg_match('/^grok-([0-9]+(?:\.[0-9]+)*)/', $aId, $aMatches);
+        $bMatch = preg_match('/^grok-([0-9]+(?:\.[0-9]+)*)/', $bId, $bMatches);
         if ($aMatch && $bMatch) {
-            $aVersion = (int) $aMatches[1];
-            $bVersion = (int) $bMatches[1];
-            if ($aVersion !== $bVersion) {
-                return $bVersion - $aVersion; // Higher version first.
+            $versionComp = version_compare($bMatches[1], $aMatches[1]);
+            if ($versionComp !== 0) {
+                return $versionComp; // Higher version first.
             }
+        } elseif ($aMatch) {
+            return -1; // Versioned models come before unversioned ones.
+        } elseif ($bMatch) {
+            return 1;
         }
 
         // Fallback: Sort alphabetically.

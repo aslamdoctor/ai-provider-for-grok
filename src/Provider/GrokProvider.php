@@ -55,8 +55,9 @@ class GrokProvider extends AbstractApiProvider
             }
         }
 
+        $capabilityNames = implode(', ', array_map('strval', $capabilities));
         throw new RuntimeException(
-            'Unsupported model capabilities: ' . implode( ', ', $capabilities )
+            esc_html('Unsupported model capabilities: ' . $capabilityNames)
         );
     }
 

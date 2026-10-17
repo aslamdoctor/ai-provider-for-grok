@@ -6,7 +6,7 @@
  * Description: AI Provider for Grok (xAI) for the WordPress AI Client.
  * Requires at least: 6.9
  * Requires PHP: 7.4
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: aslamdoctor
  * Author URI: https://github.com/sponsors/aslamdoctor
  * License: GPL-3.0-or-later

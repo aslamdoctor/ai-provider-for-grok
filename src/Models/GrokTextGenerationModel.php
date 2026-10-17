@@ -35,4 +35,38 @@ class GrokTextGenerationModel extends AbstractOpenAiCompatibleTextGenerationMode
             $this->getRequestOptions()
         );
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Ensures json_schema conforms to xAI / OpenAI API structure with 'name' and 'schema'.
+     *
+     * @since 1.0.4
+     *
+     * @param array<string, mixed>|null $outputSchema The output schema.
+     * @return array<string, mixed> The prepared response format parameter.
+     */
+    protected function prepareResponseFormatParam(?array $outputSchema): array
+    {
+        if (is_array($outputSchema)) {
+            if (isset($outputSchema['schema'])) {
+                $jsonSchema = $outputSchema;
+                if (!isset($jsonSchema['name'])) {
+                    $jsonSchema['name'] = 'response';
+                }
+            } else {
+                $jsonSchema = [
+                    'name'   => 'response',
+                    'schema' => $outputSchema,
+                ];
+            }
+
+            return [
+                'type'        => 'json_schema',
+                'json_schema' => $jsonSchema,
+            ];
+        }
+
+        return ['type' => 'json_object'];
+    }
 }

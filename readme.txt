@@ -3,8 +3,8 @@ Contributors: aslamdoctor
 Donate link: https://github.com/sponsors/aslamdoctor
 Tags: ai, grok, xai, artificial-intelligence, connector
 Requires at least: 6.9
-Tested up to: 6.9
-Stable tag: 1.0.3
+Tested up to: 7.1
+Stable tag: 1.0.4
 Requires PHP: 7.4
 License: GPL-3.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -109,6 +109,16 @@ Please read our [Contributing Guide](https://github.com/aslamdoctor/ai-provider-
 
 == Changelog ==
 
+= 1.0.4 =
+* Fixed JSON schema structured output by conforming to xAI response_format structure (fixes #3)
+* Excluded video models from image generation mapping
+* Enabled multimodal image input for Grok 3 and newer models
+* Added webSearch option support when supported by WP AI Client SDK
+* Improved model version sorting to handle decimal releases (e.g. Grok 4.20)
+* Added direct file access protection to autoloader
+* Escaped exception strings in provider class
+* Bumped WordPress tested up to version to 7.1
+
 = 1.0.3 =
 * Updated plugin assets with revised icons and banners
 
@@ -129,6 +139,9 @@ Please read our [Contributing Guide](https://github.com/aslamdoctor/ai-provider-
 * Vision input support for compatible models
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+Maintenance release with improved model sorting, Grok 4 multimodal support, and WordPress 7.1 compatibility.
 
 = 1.0.0 =
 Initial release.
